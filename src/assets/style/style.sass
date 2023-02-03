@@ -1,5 +1,7 @@
 $font-stack: Arial, sans-serif
-$color-blue: blue
+$color-black: black
+$color-gray: #eaeaea
+$color-border: #c7c6c6
 
 *
     margin: 0
@@ -7,14 +9,64 @@ $color-blue: blue
 
 body
     font-family: $font-stack
-    color: $color-blue
-
+    color: $color-black
+strong
+    color: red
+#app
+    width: 100vw
+    height: 100vh
+.account
+    display: flex
+    margin: 0 auto
+    width: fit-content
+.account__avatar
+    margin-right: 20px
+    width: 250px
 .account__avatar_image
-    width: 200px
-    height: 200px
+    display: block
+    width: 100%
+.account__avatar_button
+    display: block
+    margin-bottom: 10px
+    width: 100%
+    height: 30px
+    border-radius: 4px
+    background: #fff
+    border: 1px solid $color-black
+    outline: none
+    transition-duration: 0.4s
+    cursor: pointer
+
+    &:hover
+        background: $color-gray
+    &:focus
+        border: none
+        outline: none
+.buttons
+    margin-bottom: 20px
+.account__tablets
+    height: 50px
+    width: 160px
+    background: $color-gray
+    border: none
+    outline: none
+    &:focus
+        border: none
+        outline: none
+.open
+    background: $color-border
+.account__personal
+    width: 320px
+.account__field-group
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+.account__label
+    margin-right: 10px
+    width: 110px
 .container
     position: relative
-.settings__input-element
+.account__personal_input
     box-sizing: border-box
     height: 32px
     padding-left: 8px
@@ -22,32 +74,27 @@ body
     gap: 4px
     width: 196px
     font-size: 16px
-    background: aliceblue
-    border: 1px solid blue
+    background: #eaeaea
+    border: 1px solid $color-border
     border-radius: 6px
     transition-duration: 0.4s
+    &:focus
+        outline: none
+    &:hover
+        background: $color-border
 
-.settings__input-element[type=number]::-webkit-outer-spin-button,
-.settings__input-element[type=number]::-webkit-inner-spin-button
-    -webkit-appearance: none
-    margin: 0
-
-// .input:hover
-//     color: var(--color-text-800)
-//     background: var(--color-text-300)
-//     box-shadow: var(--input-hover-box-shadow)
-
-// .input:focus
-//     border: 1px solid var(--color-primary-500)
-//     outline: none
-
+.account__select
+    font-size: 12px
+    width: 115px
 .select
+    height: fit-content
+    min-height: 32px
     cursor: pointer
 
 .dropdown
     position: absolute
     top: 33px
-    left: 124px
+    left: 0px
     width: 196px
     min-height: 1px
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -57,12 +104,29 @@ body
 
 .option
     box-sizing: border-box
+    display: flex
     margin: 0
     padding: 8px
     height: 32px
-    background: aliceblue
+    background: #eaeaea
     padding-left: 8px
     padding-top: 5px
     font-size: 16px
     cursor: pointer
+    user-select: none
     transition-duration: 0.4s
+    &:hover
+        background: $color-border
+.label
+    order: 1
+.checkbox
+    margin-right: 10px
+    order: 0
+.account__password
+    width: 320px
+
+@media (max-width: 500px)
+    .account
+        flex-direction: column
+    .account__avatar
+        width: 320px

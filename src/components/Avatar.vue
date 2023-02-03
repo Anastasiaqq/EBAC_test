@@ -1,8 +1,10 @@
 <template>
     <div class="account__avatar">
         <img class="account__avatar_image" :src="img" alt="">
-        <button class="account__avatar_change_button">change avatar</button>
-        <button class="account__avatar_delete_button">delete avatar</button>
+        <div class="account__buttons">
+            <button class="account__avatar_button account__avatar_change_button" id="change">change avatar</button>
+            <button class="account__avatar_button account__avatar_delete_button" id="delete">delete avatar</button>
+        </div>
     </div>
 </template>
 
